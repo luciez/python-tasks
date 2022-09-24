@@ -7,9 +7,9 @@ baliky = {
 }
 balik=input("Zadej kod baliku:")
 if balik in baliky:
-    if baliky[balik]== True:
-        print ("Balík byl předán kurýrovi")
+    if baliky[balik] == True:
+        print ("Balík byl předán kurýrovi.")
     else:
-        print ("Balík zatím nebyl předán kurýrovi")
+        print ("Balík zatím nebyl předán kurýrovi.")
 else:
     print ("Balík nebyl nalezen")
