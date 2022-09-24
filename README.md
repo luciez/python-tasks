@@ -1,3 +1,1 @@
-lalala
-Did it really work?
-yeeeeeeeeeeey 
+Training repository for Intro into Python course from Czechitas.
