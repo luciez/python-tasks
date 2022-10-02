@@ -492,8 +492,12 @@ staty = [
      'area': 390757.0}]
 
 region = (input("Zadej region:"))
+region_exists = False
 for state in staty:
     if region in state["region"]:
         print (state["name"])
+        region_exists=True
+if region_exists == False:
+    print ("Neznámý region")
+# bonus
 
-#bonus
