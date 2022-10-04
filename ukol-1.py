@@ -5,7 +5,7 @@ baliky = {
     "B501X": True,
     "B947X": False,
 }
-balik=input("Zadej kod baliku:")
+balik=input("Zadej kod baliku: ")
 if balik in baliky:
     if baliky[balik]:
         print ("Balík byl předán kurýrovi.")
