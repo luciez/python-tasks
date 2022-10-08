@@ -491,13 +491,19 @@ staty = [
     {'name': 'Zimbabwe', 'capital': 'Harare', 'region': 'Africa', 'subregion': 'Eastern Africa', 'population': 14240168,
      'area': 390757.0}]
 
-region = (input("Zadej region:"))
-region_exists = False
-for state in staty:
+region = (input("Zadej region: "))
+filtered_states = list(filter(lambda state: state["region"] == region, staty))
+population_per_subregion = {}
+
+for state in filtered_states:
     if region in state["region"]:
         print (state["name"])
-        region_exists=True
-if region_exists == False:
-    print ("Neznámý region")
-# bonus
+    if state["subregion"] in population_per_subregion:
+        population_per_subregion[state["subregion"]] += state["population"]
+    else:
+        population_per_subregion[state["subregion"]] = state["population"]
 
+if len(filtered_states) == 0:
+    print ("Neznámý region.")
+else:
+    print (population_per_subregion)
