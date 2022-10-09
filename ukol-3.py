@@ -2,18 +2,20 @@
 from dataclasses import replace
 from math import ceil
 
-phone_number=input ("Zadej telefonní číslo: ")
-phone_number=phone_number.replace(" ","")
+
 def phone_number_validator (phone_number):
+    phone_number=phone_number.replace(" ","")
     if len(phone_number) == 9 or len(phone_number) == 13 and phone_number[0:4]=="+420":
-        return phone_number==True
+        return True
     else:
         print ("Telefonní číslo není platné.")
         exit()
-phone_number_validator (phone_number)
 
-message=input ("Tvoje zpráva: ")
-number_of_messages=ceil(len(message)/180)
 def price_per_message (message):
+    number_of_messages=ceil(len(message)/180)
     print (f"Cena za tvou zprávu je {number_of_messages*3} Kč.")
+
+phone_number=input ("Zadej telefonní číslo: ")
+phone_number_validator (phone_number)
+message=input ("Tvoje zpráva: ")
 price_per_message(message)
