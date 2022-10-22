@@ -35,6 +35,14 @@ class Kucharka:
     def vyzkousene_recepty(self):
         return list(filter(lambda recept: recept.vyzkouseno == True, self.recepty))
 
+    def vypis_vyzkousene_recepty(self):
+        if len(self.vyzkousene_recepty())>=1:
+            for recept in self.vyzkousene_recepty():
+                print(recept.nazev)
+        else:
+            print("Žádný vyzkoušený recept neexistuje. Musíš víc vařit!")
+        
+
 recept1=Recept("Šťavnaté rizoto","Střední","https://www.vareni.cz/recepty/stavnate-rizoto/")
 recept2=Recept("Lososové rizoto s parmazánem","Vysoká","https://www.vareni.cz/recepty/lososove-rizoto-s-parmazanem-1615306474678/")
 recept3=Recept("Zeleninové rizoto s kuřecím masem","Střední","https://www.vareni.cz/recepty/zeleninove-rizoto-s-kurecim-masem/")
@@ -45,6 +53,4 @@ recept3.zkusit()
 rizota=Kucharka("Rýžová rizota z rýže", "Rýžový Král")
 rizota.pridej_recept (recept3)
 
-for recept in rizota.vyzkousene_recepty():
-    print(recept)
-
+rizota.vypis_vyzkousene_recepty()
