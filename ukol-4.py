@@ -31,14 +31,20 @@ class Kucharka:
     
     def pridej_recept(self,recept):
         self.recepty.append(recept)
+    
+    def vyzkousene_recepty(self):
+        return list(filter(lambda recept: recept.vyzkouseno == True, self.recepty))
 
 recept1=Recept("Šťavnaté rizoto","Střední","https://www.vareni.cz/recepty/stavnate-rizoto/")
 recept2=Recept("Lososové rizoto s parmazánem","Vysoká","https://www.vareni.cz/recepty/lososove-rizoto-s-parmazanem-1615306474678/")
 recept3=Recept("Zeleninové rizoto s kuřecím masem","Střední","https://www.vareni.cz/recepty/zeleninove-rizoto-s-kurecim-masem/")
 
 recept1.zmen_narocnost("Nízká")
-recept2.zkusit()
+recept3.zkusit()
 
-Rizota=Kucharka("Rýžová rizota z rýže", "Rýžový Král")
-Rizota.pridej_recept (recept3)
+rizota=Kucharka("Rýžová rizota z rýže", "Rýžový Král")
+rizota.pridej_recept (recept3)
+
+for recept in rizota.vyzkousene_recepty():
+    print(recept)
 
