@@ -33,7 +33,7 @@ class Kucharka:
         self.recepty.append(recept)
     
     def vyzkousene_recepty(self):
-        return repr(list(filter(lambda recept: recept.vyzkouseno == True, self.recepty)))
+        return list(filter(lambda recept: recept.vyzkouseno == True, self.recepty))
 
     # def vypis_vyzkousene_recepty(self):
     #     if len(self.vyzkousene_recepty())>=1:
