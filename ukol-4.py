@@ -5,7 +5,7 @@ class Recept:
         self.url_adresa=url_adresa
         self.vyzkouseno=False
     
-    def __str__(self):
+    def __repr__(self):
         if self.vyzkouseno==False:
             return f"VYZKOUŠEJ! Recept {self.nazev} (náročnost:{self.narocnost}). Najdeš ho na adrese {self.url_adresa}."
         else:
@@ -33,14 +33,14 @@ class Kucharka:
         self.recepty.append(recept)
     
     def vyzkousene_recepty(self):
-        return list(filter(lambda recept: recept.vyzkouseno == True, self.recepty))
+        return repr(list(filter(lambda recept: recept.vyzkouseno == True, self.recepty)))
 
-    def vypis_vyzkousene_recepty(self):
-        if len(self.vyzkousene_recepty())>=1:
-            for recept in self.vyzkousene_recepty():
-                print(recept.nazev)
-        else:
-            print("Žádný vyzkoušený recept neexistuje. Musíš víc vařit!")
+    # def vypis_vyzkousene_recepty(self):
+    #     if len(self.vyzkousene_recepty())>=1:
+    #         for recept in self.vyzkousene_recepty():
+    #             print(recept.nazev)
+    #     else:
+    #         print("Žádný vyzkoušený recept neexistuje. Musíš víc vařit!")
         
 
 recept1=Recept("Šťavnaté rizoto","Střední","https://www.vareni.cz/recepty/stavnate-rizoto/")
@@ -52,5 +52,6 @@ recept3.zkusit()
 
 rizota=Kucharka("Rýžová rizota z rýže", "Rýžový Král")
 rizota.pridej_recept (recept3)
-
-rizota.vypis_vyzkousene_recepty()
+#print(rizota)
+print(rizota.vyzkousene_recepty())
+#print(rizota.vyzkousene_recepty())
