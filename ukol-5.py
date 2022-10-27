@@ -18,10 +18,19 @@ class Koronavirus(Nemoc):
         super().__init__(jmeno, inkubacni_doba, pocet_obeti, sireni)
         self.varianty=[]
     
-    def zmen_pocet_obeti(self, pocet_obeti):
-        return super().zmen_pocet_obeti
-    
     def pridej_variantu(self, varianta):
         self.varianty.append(varianta)
-
     
+    def __str__(self):
+        return f'{super().__str__()}. Varianty: {", ".join(self.varianty)} .'
+
+covid=Koronavirus("covid19",7,1000000,"respiracni")
+#test metody zmen_pocet_obeti
+covid.zmen_pocet_obeti(2000000)
+print(covid.pocet_obeti)
+
+#test metody pridej_variantu
+covid.pridej_variantu("omikron")
+covid.pridej_variantu("delta")
+covid.pridej_variantu("covid19")
+print(covid)
