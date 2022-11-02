@@ -502,7 +502,7 @@ seznam_statu_name_capital=[{"name: " + stat["name"], "capital: " + stat["capital
 
 area_europe=[stat.get("area",0) for stat in staty if stat["region"]=="Europe"]
 area_europe_sum=sum(area_europe)
-# Suma ploch zemí Evropy
+## Suma ploch zemí Evropy 
 
 #print(seznam_statu)
 #print(seznam_statu_asie)
