@@ -506,4 +506,4 @@ for state in filtered_states:
 if len(filtered_states) == 0:
     print ("Neznámý region.")
 else:
-    print (population_per_subregion)
+    #print (population_per_subregion)
