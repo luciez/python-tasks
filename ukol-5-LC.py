@@ -498,13 +498,16 @@ seznam_statu_asie=set([stat["name"] for stat in staty if stat["region"]=="Asia"]
 # Seznam všech států v Asii
 
 seznam_statu_name_capital=[{"name: " + stat["name"], "capital: " + stat["capital"]} for stat in staty]
-# Sezanm států a hlavních měst
+# Sezanam států a hlavních měst
 
 area_europe=[stat.get("area",0) for stat in staty if stat["region"]=="Europe"]
 area_europe_sum=sum(area_europe)
+# nebo
+area_europe = sum([stat.get("area", 0) for stat in staty if stat["region"] == "Europe"])
 # Suma ploch zemí Evropy 
 
 #print(seznam_statu)
 #print(seznam_statu_asie)
 #print(seznam_statu_name_capital)
 #print(area_europe_sum)
+#print(area_europe)
