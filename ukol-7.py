@@ -30,5 +30,5 @@ def vypocet_ceny(cena_za_kus, pocet_vstupenek):
 datum_navstevy=vytvor_datetime(pozadovane_datum)
 cena_za_kus=vrat_cenu_vstupenky(datum_navstevy)
 vypocet_ceny(cena_za_kus, pocet_vstupenek)
-#print(celkem)
+
 
